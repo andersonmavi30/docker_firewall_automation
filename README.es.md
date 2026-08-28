@@ -1,7 +1,3 @@
-
-**README.es.md** (español):
-
-```markdown
 # docker_firewall_automation
 
 🇺🇸 [English version](README.md)
@@ -49,3 +45,24 @@ docker run -it --rm \
   -v $(pwd)/playbooks:/app/playbooks \
   -v $(pwd)/inventory:/app/inventory \
   docker_firewall_automation
+
+##Estructura del proyecto (prevista)
+
+docker_firewall_automation/
+├── Dockerfile
+├── requirements.txt       # Librerías Python
+├── requirements.yml       # Colecciones Ansible
+├── ansible.cfg
+├── playbooks/             # Playbooks de ejemplo
+├── scripts/               # Scripts de apoyo
+└── README.md
+
+##Repositorios
+| Rol       | Plataforma | Remoto git |
+| --------- | ---------- | ---------- |
+| Principal | GitLab     | `gitlab`   |
+| Respaldo  | GitHub     | `github`   |
+
+##Licensia
+
+⚠️ Este archivo lleva bloques de código dentro, así que copia desde `# docker_firewall_automation` hasta `MIT`, sin las vallas externas ```` ```markdown ```` ni ```` ``` ```` final.
