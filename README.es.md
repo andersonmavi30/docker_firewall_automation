@@ -63,6 +63,6 @@ docker_firewall_automation/
 | Principal | GitLab     | `gitlab`   |
 | Respaldo  | GitHub     | `github`   |
 
-##Licensia
+##Licencia
 
 ⚠️ Este archivo lleva bloques de código dentro, así que copia desde `# docker_firewall_automation` hasta `MIT`, sin las vallas externas ```` ```markdown ```` ni ```` ``` ```` final.

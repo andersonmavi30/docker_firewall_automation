@@ -45,3 +45,24 @@ docker run -it --rm \
   -v $(pwd)/playbooks:/app/playbooks \
   -v $(pwd)/inventory:/app/inventory \
   docker_firewall_automation
+
+##Project structure (planned)
+
+docker_firewall_automation/
+├── Dockerfile
+├── requirements.txt       # Python libraries
+├── requirements.yml       # Ansible collections
+├── ansible.cfg
+├── playbooks/             # Example playbooks
+├── scripts/               # Helper scripts
+└── README.md
+
+##Repositories
+
+| Role   | Platform | Git remote |
+| ------ | -------- | ---------- |
+| Main   | GitLab   | `gitlab`   |
+| Backup | GitHub   | `github`   |
+
+##License
+MIT
