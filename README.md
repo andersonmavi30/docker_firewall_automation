@@ -45,9 +45,38 @@ docker run -it --rm \
   -v $(pwd)/playbooks:/app/playbooks \
   -v $(pwd)/inventory:/app/inventory \
   docker_firewall_automation
+```
 
-##Project structure (planned)
+## Git workflow
 
+Standard flow for **every change** (GitLab = main repo, GitHub = backup):
+
+```bash
+# 1. Create a branch and switch to it
+git checkout -b feature/my-change
+
+# 2. Edit files, then stage and commit
+git add .
+git commit -m "feat: describe the change"
+
+# 3. Push the branch to GitLab and open a Merge Request
+git push -u gitlab feature/my-change
+
+# 4. After the MR is merged, sync local main (fast-forward only)
+git checkout main
+git pull --ff-only
+
+# 5. Push main to the GitHub backup
+git push github main
+
+# 6. Delete the local branch and prune deleted remote branches
+git branch -d feature/my-change
+git fetch --prune
+```
+
+## Project structure (planned)
+
+```text
 docker_firewall_automation/
 ├── Dockerfile
 ├── requirements.txt       # Python libraries
@@ -56,13 +85,15 @@ docker_firewall_automation/
 ├── playbooks/             # Example playbooks
 ├── scripts/               # Helper scripts
 └── README.md
+```
 
-##Repositories
+## Repositories
 
-| Role   | Platform | Git remote |
-| ------ | -------- | ---------- |
-| Main   | GitLab   | `gitlab`   |
-| Backup | GitHub   | `github`   |
+| Role | Platform | Git remote |
+|---|---|---|
+| Main | GitLab | `gitlab` |
+| Backup | GitHub | `github` |
 
-##License
+## License
+
 MIT
