@@ -45,9 +45,38 @@ docker run -it --rm \
   -v $(pwd)/playbooks:/app/playbooks \
   -v $(pwd)/inventory:/app/inventory \
   docker_firewall_automation
+```
 
-##Estructura del proyecto (prevista)
+## Flujo de trabajo git
 
+Flujo estándar para **cada cambio** (GitLab = repo principal, GitHub = respaldo):
+
+```bash
+# 1. Crear una rama y saltar a ella
+git checkout -b feature/mi-cambio
+
+# 2. Editar archivos, preparar y commitear
+git add .
+git commit -m "feat: describe el cambio"
+
+# 3. Subir la rama a GitLab y abrir un Merge Request
+git push -u gitlab feature/mi-cambio
+
+# 4. Cuando el MR esté mergeado, sincronizar main local (solo fast-forward)
+git checkout main
+git pull --ff-only
+
+# 5. Subir main al respaldo en GitHub
+git push github main
+
+# 6. Borrar la rama local y limpiar ramas remotas eliminadas
+git branch -d feature/mi-cambio
+git fetch --prune
+```
+
+## Estructura del proyecto (prevista)
+
+```text
 docker_firewall_automation/
 ├── Dockerfile
 ├── requirements.txt       # Librerías Python
@@ -56,13 +85,15 @@ docker_firewall_automation/
 ├── playbooks/             # Playbooks de ejemplo
 ├── scripts/               # Scripts de apoyo
 └── README.md
+```
 
-##Repositorios
-| Rol       | Plataforma | Remoto git |
-| --------- | ---------- | ---------- |
-| Principal | GitLab     | `gitlab`   |
-| Respaldo  | GitHub     | `github`   |
+## Repositorios
 
-##Licencia
+| Rol | Plataforma | Remoto git |
+|---|---|---|
+| Principal | GitLab | `gitlab` |
+| Respaldo | GitHub | `github` |
 
-⚠️ Este archivo lleva bloques de código dentro, así que copia desde `# docker_firewall_automation` hasta `MIT`, sin las vallas externas ```` ```markdown ```` ni ```` ``` ```` final.
+## Licencia
+
+MIT
