@@ -1,0 +1,6 @@
+---
+collections:
+  - name: cisco.asa               # Cisco ASA
+  - name: fortinet.fortios        # FortiGate
+  - name: paloaltonetworks.panos  # Palo Alto
+  - name: check_point.mgmt        # Check Point

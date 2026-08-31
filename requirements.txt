@@ -1,0 +1,18 @@
+# Ansible
+ansible-core
+
+# Network automation
+netmiko
+napalm
+paramiko
+
+# Vendor SDKs
+pan-os-python       # Palo Alto
+pan-python          # Palo Alto (legacy XML API)
+fortiosapi          # FortiGate REST API
+cp_mgmt_api_python_sdk  # Check Point Management API
+
+# Utilities
+requests
+jinja2
+pyyaml
