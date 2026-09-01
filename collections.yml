@@ -1,5 +1,10 @@
 ---
 collections:
+  # Network base
+  - name: ansible.netcommon
+  - name: ansible.utils
+
+  # Vendors
   - name: cisco.asa               # Cisco ASA
   - name: fortinet.fortios        # FortiGate
   - name: paloaltonetworks.panos  # Palo Alto
