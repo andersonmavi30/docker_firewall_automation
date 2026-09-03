@@ -10,7 +10,7 @@ paramiko
 pan-os-python           # Palo Alto
 pan-python              # Palo Alto (legacy XML API)
 fortiosapi              # FortiGate REST API
-cp_mgmt_api_python_sdk  # Check Point Management API
+cp-mgmt-api-sdk  # Check Point Management API
 scp                     # File transfers (Cisco ASA)
 
 # Parsing / NetDevOps
